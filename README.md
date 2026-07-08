@@ -91,15 +91,16 @@ The following functions are supported:
    5. 'Pixel Points', local pixel fine-tuning
    6. 'Quality adjustment', 'Size offset', overall control
    7. 'Mode modification', multiple modes support
-7. [Modify Lottie], simulate the real Lottie file structure, modify and expand the source file, basically does not affect the actual effect
-8. [Modify file attributes], such as creation time, access time, modification time
-9. [Modify item], no need to delete Cocoapods
+7. [interference images], AI perceptual hash adversarial perturbation, icon diversion processing
+8. [Modify Lottie], simulate the real Lottie file structure, modify and expand the source file, basically does not affect the actual effect
+9. [Modify file attributes], such as creation time, access time, modification time
+10. [Modify item], no need to delete Cocoapods
    1. Can be set to'modify uuid', completely refurbished
    2. Customize the name of the'modify target', and the associated information will be updated synchronously
-10. [File comparison], compare the file modification percentage before and after obfuscatio
+11. [File comparison], compare the file modification percentage before and after obfuscatio
     1. ‘Reference path’, customize the original project
     2. ‘Maximum limit’, skip the comparison if it exceeds the limit
-11. Automatic source code backup
+12. Automatic source code backup
 <a name="279a46203c9fe475b30ffab43dad6dba"></a>
 ### Objective-C
 
@@ -254,10 +255,12 @@ Update iterations will be carried out in the following order
 Run the APP rendering, please read the [tool usage tutorial](https://www.yuque.com/docs/share/cd0968ac-9c7e-415f-9e7c-1460b85e80e8) in detail before use<br />![image.png](https://cdn.nlark.com/yuque/0/2021/png/213807/1623167266244-4978d5ed-0b2c-42b5-80c4-1b44e4ff7f96.png#averageHue=%233a9b1d&clientId=u4ef53c93-4376-4&errorMessage=unknown%20error&from=paste&height=877&id=ufbdd65fd&originHeight=1754&originWidth=2532&originalType=binary&ratio=2&rotation=0&showTitle=false&size=443560&status=error&style=none&taskId=ue83d9a90-392f-4558-9b46-f06320d2c45&title=&width=1266)
 <a name="c318fa67bf88d5d842cee03115743b4b"></a>
 # Update log
-<h3 id="L8Epu">v8.3.5 (2026.06.17) Hotfix</h3>
+<h3 id="L8Epu">v8.3.6 (2026.07.09) Hotfix</h3>
 
-1. Enhance OC [Rename attributes, methods, classes], introduce natural language, and support semantic recognition
-2. Enhance Swift [rename enums, properties, methods, global functions, classes], introduce natural language, and support semantic recognition
+1. Added [interference images], AI perceptual hash adversarial perturbation, icon diversion processing
+2. Enhance Natural naming, lemma morphological reduction, numerical normalization, preposition tagging, and expand word selection
+3. Fix OC [Modification Class], Memory Overflow
+4. Optimize the automatic installation environment commands to enhance overall performance and reduce confusion time
 
 [View more historical update records](https://www.yuque.com/docs/share/39f2f60e-b6a8-443b-b005-b9364fb79b95?translate=en)
 <a name="41b9f638a3e62c9449ec872644258c8d"></a>

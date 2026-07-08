@@ -91,15 +91,16 @@ confuse是一款[混淆工具](https://github.com/520coding/confuse)，尽可能
    5. ‘像素点数’，局部像素微调
    6. ‘质量调整’、‘大小偏移’，整体控制
    7. ‘模式修改’，多种模式支持
-7. [修改Lottie]，模拟真实Lottie文件结构，修改和扩充源文件，基本不影响实际效果
-8. [修改文件属性]，如创建时间、访问时间、修改时间
-9. [修改项目]，无需删除Cocoapods
+7. [干扰图片]，AI 感知哈希对抗扰动，icon分流处理
+8. [修改Lottie]，模拟真实Lottie文件结构，修改和扩充源文件，基本不影响实际效果
+9. [修改文件属性]，如创建时间、访问时间、修改时间
+10. [修改项目]，无需删除Cocoapods
    1. 可设置‘修改uuid’，彻底翻新
    2. 自定义‘修改target’名称，相关联信息同步更新
-10. [文件对比]，对比混淆前后文件修改百分比
+11. [文件对比]，对比混淆前后文件修改百分比
     1. ‘参考路径’，自定义设置原始项目
     2. ‘最大限制’，超过部分跳过对比
-11. 自动备份源码
+12. 自动备份源码
 <a name="279a46203c9fe475b30ffab43dad6dba"></a>
 ### Objective-C
 
@@ -253,10 +254,12 @@ confuse是一款[混淆工具](https://github.com/520coding/confuse)，尽可能
 运行APP效果图，使用前请详细阅读[工具使用教程](https://www.yuque.com/docs/share/edd2603f-d09d-4795-ae71-b42419b99446?#《confuse使用说明》)<br />![image.png](https://cdn.nlark.com/yuque/0/2020/png/213807/1607931800015-f60e682f-6ef3-4c5a-bfc5-4c88222bb1a7.png#averageHue=%239a6a2a&height=540&id=Ai791&originHeight=1080&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=489209&status=done&style=none&title=&width=960)
 <a name="c318fa67bf88d5d842cee03115743b4b"></a>
 # 更新日志
-<h3 id="INHAC">v8.3.5（2026.06.17）热更新</h3>
+<h3 id="INHAC">v8.3.6（2026.07.09）热更新</h3>
 
-1. 强化OC[重命名属性、方法、类]，引入自然语言，支持语义识别
-2. 强化Swift[重命名枚举、属性、方法、全局方法、类]，引入自然语言，支持语义识别
+1. 新增[干扰图片]，AI 感知哈希对抗扰动，icon分流处理
+2. 强化Natural命名，lemma 词形还原、数字归一、介词标签、扩充选词
+3. 修复OC[修改类], 内存溢出
+4. 优化自动安装环境指令，提升整体性能，减少混淆时间
 
 [查看更多历史更新记录](https://www.yuque.com/docs/share/39f2f60e-b6a8-443b-b005-b9364fb79b95?#《confuse更新说明》)
 <a name="41b9f638a3e62c9449ec872644258c8d"></a>
