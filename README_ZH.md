@@ -254,12 +254,13 @@ confuse是一款[混淆工具](https://github.com/520coding/confuse)，尽可能
 运行APP效果图，使用前请详细阅读[工具使用教程](https://www.yuque.com/docs/share/edd2603f-d09d-4795-ae71-b42419b99446?#《confuse使用说明》)<br />![image.png](https://cdn.nlark.com/yuque/0/2020/png/213807/1607931800015-f60e682f-6ef3-4c5a-bfc5-4c88222bb1a7.png#averageHue=%239a6a2a&height=540&id=Ai791&originHeight=1080&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=489209&status=done&style=none&title=&width=960)
 <a name="c318fa67bf88d5d842cee03115743b4b"></a>
 # 更新日志
-<h3 id="INHAC">v8.3.6（2026.07.09）热更新</h3>
+<h3 id="INHAC">v8.3.7（2026.07.13）热更新</h3>
 
-1. 新增[干扰图片]，AI 感知哈希对抗扰动，icon分流处理
-2. 强化Natural命名，lemma 词形还原、数字归一、介词标签、扩充选词
-3. 修复OC[修改类], 内存溢出
-4. 优化自动安装环境指令，提升整体性能，减少混淆时间
+1. 优化OC[修改控制流]，类方法内支持注入依赖self.<属性>
+2. 优化OC[拆分方法]，strongify(__strong … typeof) 统一标记危险区，禁止在其之前/之上拆分
+3. 修复OC[插入方法]，注入依赖self.<属性>赋值可能导致的无限递归问题，只读属性漏判，C 数组返回类型（如 void *[1]）导致的编译错误
+4. 修复Swift[拆分方法]，避免inout 参数与尾段重赋值冲突
+5. 优化编译xcodebuild -workspace 仅查顶层目录，避免误扫三方库
 
 [查看更多历史更新记录](https://www.yuque.com/docs/share/39f2f60e-b6a8-443b-b005-b9364fb79b95?#《confuse更新说明》)
 <a name="41b9f638a3e62c9449ec872644258c8d"></a>

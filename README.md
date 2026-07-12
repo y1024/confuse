@@ -255,12 +255,13 @@ Update iterations will be carried out in the following order
 Run the APP rendering, please read the [tool usage tutorial](https://www.yuque.com/docs/share/cd0968ac-9c7e-415f-9e7c-1460b85e80e8) in detail before use<br />![image.png](https://cdn.nlark.com/yuque/0/2021/png/213807/1623167266244-4978d5ed-0b2c-42b5-80c4-1b44e4ff7f96.png#averageHue=%233a9b1d&clientId=u4ef53c93-4376-4&errorMessage=unknown%20error&from=paste&height=877&id=ufbdd65fd&originHeight=1754&originWidth=2532&originalType=binary&ratio=2&rotation=0&showTitle=false&size=443560&status=error&style=none&taskId=ue83d9a90-392f-4558-9b46-f06320d2c45&title=&width=1266)
 <a name="c318fa67bf88d5d842cee03115743b4b"></a>
 # Update log
-<h3 id="L8Epu">v8.3.6 (2026.07.09) Hotfix</h3>
+<h3 id="L8Epu">v8.3.7 (2026.07.13) Hotfix</h3>
 
-1. Added [interference images], AI perceptual hash adversarial perturbation, icon diversion processing
-2. Enhance Natural naming, lemma morphological reduction, numerical normalization, preposition tagging, and expand word selection
-3. Fix OC [Modification Class], Memory Overflow
-4. Optimize the automatic installation environment commands to enhance overall performance and reduce confusion time
+1. Optimized OC [Control Flow Modification]: Added support for injecting dependencies on `self.<property>` within class methods.
+2. Optimized OC [Method Splitting]: Standardized the marking of "danger zones" for `strongify(__strong … typeof)` macros; splitting is now prohibited before or within these zones.
+3. Fixed OC [Method Insertion]: Resolved infinite recursion issues caused by injecting dependencies involving `self.<property>` assignments; fixed missed detection of read-only properties; fixed compilation errors caused by C array return types (e.g., `void *[1]`).
+4. Fixed Swift [Method Splitting]: Prevented conflicts between `inout` parameters and reassignments in the trailing segment.
+5. Optimized `xcodebuild -workspace` compilation: Restricted scanning to the top-level directory to avoid inadvertently scanning third-party libraries.
 
 [View more historical update records](https://www.yuque.com/docs/share/39f2f60e-b6a8-443b-b005-b9364fb79b95?translate=en)
 <a name="41b9f638a3e62c9449ec872644258c8d"></a>
