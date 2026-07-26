@@ -254,13 +254,15 @@ confuse是一款[混淆工具](https://github.com/520coding/confuse)，尽可能
 运行APP效果图，使用前请详细阅读[工具使用教程](https://www.yuque.com/docs/share/edd2603f-d09d-4795-ae71-b42419b99446?#《confuse使用说明》)<br />![image.png](https://cdn.nlark.com/yuque/0/2020/png/213807/1607931800015-f60e682f-6ef3-4c5a-bfc5-4c88222bb1a7.png#averageHue=%239a6a2a&height=540&id=Ai791&originHeight=1080&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=489209&status=done&style=none&title=&width=960)
 <a name="c318fa67bf88d5d842cee03115743b4b"></a>
 # 更新日志
-<h3 id="INHAC">v8.3.7（2026.07.13）热更新</h3>
+<h3 id="INHAC">v8.3.8（2026.07.26）热更新</h3>
 
-1. 优化OC[修改控制流]，类方法内支持注入依赖self.<属性>
-2. 优化OC[拆分方法]，strongify(__strong … typeof) 统一标记危险区，禁止在其之前/之上拆分
-3. 修复OC[插入方法]，注入依赖self.<属性>赋值可能导致的无限递归问题，只读属性漏判，C 数组返回类型（如 void *[1]）导致的编译错误
-4. 修复Swift[拆分方法]，避免inout 参数与尾段重赋值冲突
-5. 优化编译xcodebuild -workspace 仅查顶层目录，避免误扫三方库
+1. 修复Swift[重命名方法]，尾随闭包、无 bridge 的 OC、协议 selector 误改
+2. 修复Swift[重命名属性]，@objc属性黑名单误改，手写 CodingKeys、SmartCodable 只读计算属性判定
+3. 修复OC[重命名方法]，block 形参补全支持 nullability、typedef、(^name)，防嵌套劫持
+4. 修复Swift[修改属性]，抽出方法时保留原访问级别，iboutlet 残留打明确 WARNING
+5. 修复关闭打印，引号感知与多行续行，避免注释连坐与块注释卡死
+6. 修复工程扫描/Xcode，二进制 Pod 跳过、软链
+7. 优化智能命名，优化缓存提速，重复跑显著加速
 
 [查看更多历史更新记录](https://www.yuque.com/docs/share/39f2f60e-b6a8-443b-b005-b9364fb79b95?#《confuse更新说明》)
 <a name="41b9f638a3e62c9449ec872644258c8d"></a>
