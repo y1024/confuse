@@ -32,12 +32,12 @@ The source code can be modified arbitrarily to verify the actual effect. It is r
 ### Distinguish the pros and cons of tools
 In fact, to identify the pros and cons of a tool, just look at the following points:
 
-1. Can modify all attributes, methods, and all parameter names of methods
-2. Modify the name of the member (attribute, method), can it be distinguished by class, or a simple global replacement
+1. Can modify all properties, methods, and all parameter names of methods
+2. Modify the name of the member (property, method), can it be distinguished by class, or a simple global replacement
 3. Can modify the method with block parameters, a typical network request
 > For example：+ (BOOL)post:(NSString *)url parameters:(NSDictionary *)parameters success:(HttpRequestResponse)success error:(HttpRequestResponse)error;
 
-3. The length of the changed name of the method name and attribute name (this tool can guarantee that 60~80% of the changed name is a common word, such as name, title, etc., and ensure that it does not conflict with the system.~~Completely abandon the simple practice of relying on a large number of word libraries to ensure the uniqueness of naming~~, The real simulation of manual development)
+3. The length of the changed name of the method name and property name (this tool can guarantee that 60~80% of the changed name is a common word, such as name, title, etc., and ensure that it does not conflict with the system.~~Completely abandon the simple practice of relying on a large number of word libraries to ensure the uniqueness of naming~~, The real simulation of manual development)
 4. Modify the layout (Frame, Masonry, SDAutoLayout)
 5. Is the code inserted or "garbage" (this tool creates custom controls, encapsulates network requests, and uses MVC pattern association between files to completely bid farewell to "garbage" and mix the spurious with the genuine).
 6. Not to mention "Who else..." can identify macros, distinguish contextual content such as inheritance chains, and intelligently identify unmodifiable parts
@@ -55,7 +55,7 @@ The following functions are supported:
 2. Confusion percentage control, you can freely adjust according to the actual needs of your own project
 3. Smart noun substitution:
    1. When renaming, use the combination of related type existing information + similar semantics + type + some old vocabulary, and filter sensitive words. At the same time, users can also customize sensitive words.~~Deprecate'random word brainless combination'~~
-   2. Different types of members with the same name -> different types of members with different names, and different types of different name members -> different types of members with the same name, simulating normal development. Members refer to methods, attributes, and functions
+   2. Different types of members with the same name -> different types of members with different names, and different types of different name members -> different types of members with the same name, simulating normal development. Members refer to methods, properties, and functions
 4. Intelligent identification of unmodifiable parts: Identifying systems, third parties, and Pod methods through types and inheritance chains is not a'simple' equality judgment, for example:
    1. Class method: + (void)init; in principle, it can be changed anywhere
    2. Object method:-(void)reloadData; can be changed if it is not a subclass of UITableView
@@ -98,8 +98,8 @@ The following functions are supported:
    1. Can be set to'modify uuid', completely refurbished
    2. Customize the name of the'modify target', and the associated information will be updated synchronously
 11. [File comparison], compare the file modification percentage before and after obfuscatio
-    1. ‘Reference path’, customize the original project
-    2. ‘Maximum limit’, skip the comparison if it exceeds the limit
+    1. 'Reference path', customize the original project
+    2. 'Maximum limit', skip the comparison if it exceeds the limit
 12. Automatic source code backup
 <a name="279a46203c9fe475b30ffab43dad6dba"></a>
 ### Objective-C
@@ -115,9 +115,9 @@ The following functions are supported:
 4. [Insert picture], automatically insert pictures, and simulate manual calls according to context and type, and the number of inserts can be specified
 5. [Rename member variables], supports synthesisize and arrow syntax recognition
 6. [Rename property], support all types of @property , Support Protobuf, advantages:
-   1. Identify grammar, identify type, inheritance relationship, **attribute name confusion and class name (including inheritance chain) association** , automatically identify system attributes
+   1. Identify grammar, identify type, inheritance relationship, **property name confusion and class name (including inheritance chain) association** , automatically identify system property
    2. You can set the 'Model suffix' to filter by the suffix of the class name, which is convenient for filtering Model
-   3. You can set 'Model Mapping' to automatically insert the mapping relationship (customized, and automatically complete other attributes) to ensure that the background data is matched
+   3. You can set 'Model Mapping' to automatically insert the mapping relationship (customized, and automatically complete other property) to ensure that the background data is matched
 7. [Insert property], creation, assignment, and modification are all associated with existing types, smart noun replacement
    1. 'Percentage control'
    2. You can set the 'Model suffix' to filter by the suffix of the class name, the purpose: to avoid Model archiving or data transfer model failure
@@ -129,7 +129,7 @@ The following functions are supported:
 11. [Extract Method], extracting part of the method body code and encapsulating it into a method
 12. [Split method], split the method body, disrupt the function stack structure, can be split multiple times
 13. [Insert method], insert and call context-related methods, bid farewell to "garbage code", advantages:
-    1. According to the return value type of the method, create the corresponding method in the category. At the same time , the return value of the original method is encapsulated and use (local variables, attributes, formal parameters) called.
+    1. According to the return value type of the method, create the corresponding method in the category. At the same time , the return value of the original method is encapsulated and use (local variables, properties, formal parameters) called.
     2. Can be executed multiple times, the index x2 increases
 14. [Insert control flow] to change the code execution order
 15. [Merge method], interspersed merge code, and changed the function stack structure
@@ -147,23 +147,23 @@ The following functions are supported:
 22. [Modify string], support arbitrary string, encryption processing (hard code -> memory), the original string is kept in the comment for easy inspection
     1. Set the'minimum length' filter
     2. You can also set the " effective number" to use together
-23. [Modify xib, storyboard], automatically insert the view, and modify the internal structure properties
+23. [Modify xib, storyboard], automatically insert the view, and modify the internal structure property
 24. [Modify font] , randomly fine-tune the font used in the project, and identify macros
 25. [Modify color], randomly shift the color of the UI controls in the project, and identify the macro
 26. [UI layout offset], support Frame, Masonry, SDAutoLayout common layout fine-tuning
 27. [Insert file], generate other files (Combined with network, storage, and MVC to ensure that the code has high relevance and practical significance), automatic high-related calls in the project ; **Note:** (Under the project root path, a folder of " **other_xxx_file** " will be generated , and the sub-option **Target** controls Import method, if it is empty, you need to manually import, just drag the generated folder into the project; otherwise, automatically import)
 28. [Insert text], Generate json, txt, plist and other common text files, automatic high-related calls in the project  ; **note:** (under the project root path, a folder of " **other_xxx_text** " will be generated , and the generated files will be **automatically imported** )
-29. [Modify Class], modify the order of member variables, attributes, method declarations and definitions
+29. [Modify Class], modify the order of member variables, properties, method declarations and definitions
 30. [Rename class], the class name is not limited (for example: my, My), you can specify to add a prefix, support class and category name|struct|protocol，advantages:
     1. Smart noun substitution
     2. Can be set to'rename files with the same name'
     3. You can set'rename similar strings', (ignore | equal | include) three modes
-    4. Added 'correct non-standard dot grammar', calling for non-standard dot grammar (methods are called as attributes)
+    4. Added 'correct non-standard dot grammar', calling for non-standard dot grammar (methods are called as properties)
 <a name="015937695b202fc108bd5bc9b3283082"></a>
 ### C++
 
-1. [Rename attribute], support all type attributes, recognize syntax, recognize type, inherit
-2. [Insert attributes], insert attributes (member variables) and call each other to modify, automatic initialization, destruction, and assignment modification in other methods and other similar manual operations, support'percentage control'
+1. [Rename property], support all type property, recognize syntax, recognize type, inherit
+2. [Insert property], insert property (member variables) and call each other to modify, automatic initialization, destruction, and assignment modification in other methods and other similar manual operations, support'percentage control'
 3. [Rename method], similar to Xcode's Rename function, identifying types, templates, overloading, rewriting, inheritance, etc.
 4. [Modification method], use overloading technology to modify the function prototype and call the modified parameter
 5. [Modify string], support arbitrary string, encryption processing (hard code -> memory), the original string is kept in the comment for easy inspection
@@ -194,42 +194,43 @@ Adapt to Swift5.5, the SPM package management project has not yet been tested
    2. You can set the 'specified Ignore Length', if the length of the lottie name is less than the specified length, it is a dangerous name and will be ignored
    3. You can set 'ignore danger', which has the same name as the dictionary key, and it will be ignored
 5. [Insert picture], which automatically inserts pictures, and simulates manual calls according to the context and type, and the number of insertions can be specified
-6. [rename enum], identify associated and primitive values
-   1. 'Original value' can be set to refine the control range
-7. [Rename attribute], basic function, without too much description, advantages:
-   1. Similar to OC [Rename attribute], identify inheritance chain and nested type, support storage and calculation of attributes, observers, wrappers, class attributes
+6. [Rename property], basic function, without too much description, advantages:
+   1. Similar to OC [Rename property], identify inheritance chain and nested type, support storage and calculation of property, observers, wrappers, class property
    2. You can set the 'Model suffix' to filter by the suffix of the class name, which is convenient for filtering Model
    3. You can set the 'Model mapping', automatically insert the mapping relationship, and match the background data
-8. [Insert property], use calculated properties to wrap and call and replace the original properties
-   1. Support storage and calculation of attributes, observers, wrappers, class attributes
+7. [Modify Enum], supporting modification of enum values
+8. [rename enum], identify associated and primitive values
+   1. 'Original value' can be set to refine the control range
+9. [Insert property], use calculated property to wrap and call and replace the original property
+   1. Support storage and calculation of property, observers, wrappers, class property
    2. You can set the 'Model suffix' to filter by the suffix of the class name, the purpose: to avoid Model archiving or data transfer model failure
-9. [Rename method], the basic functions are renamed similar to other tools, without too much description, advantages: 
+10. [Rename method], the basic functions are renamed similar to other tools, without too much description, advantages: 
    1. Can set 'parameter label', support hidden parameter label and trailing closure usage
    2. Identification of inheritance chain nested types, support for (class, struct, enum) static methods and instance methods, and optional chains, etc.
-10. [Modify Property], supporting modifications to lazy properties
-11. [Modify closure], extract the closure content in the method body, encapsulate it into a method and call it
-12. [Extract Method], extracting part of the method body code and encapsulating it into a method. 
-13. [Split method], split the method body, disrupt the function stack structure, and can be split multiple times
-14. [Insert method], encapsulate the return value of the original method and use the context to call additional associated methods, saying goodbye to "garbage code"
-15. [Modify method], use overloading technology to modify the function prototype and call the modified parameter，support exchange parameters
+11. [Modify Property], supporting modifications to lazy property
+12. [Modify closure], extract the closure content in the method body, encapsulate it into a method and call it
+13. [Extract Method], extracting part of the method body code and encapsulating it into a method. 
+14. [Split method], split the method body, disrupt the function stack structure, and can be split multiple times
+15. [Insert method], encapsulate the return value of the original method and use the context to call additional associated methods, saying goodbye to "garbage code"
+16. [Modify method], use overloading technology to modify the function prototype and call the modified parameter，support exchange parameters
     1. Supports 'exchange parameters', randomly exchanging parameter positions, mainly used for multi-parameter methods
-    2. ‘Dynamic dispatch’, changing the method calling method
-16. [Rename global variables], smart noun substitution
-17. [Modify font] , randomly fine-tune the font used in the project, and identify macros
-18. [Modify color], randomly shift the color of UI controls in the project
-19. [UI layout offset], support Frame, SnapKit, common layout fine-tuning
-20. [Insert local variable], split single-line compound calls, change the execution order
-21. [Modify local variable], simulate manual encapsulation call, variable name association type (support nesting), advantages:
+    2. 'Dynamic dispatch', changing the method calling method
+17. [Rename global variables], smart noun substitution
+18. [Modify font] , randomly fine-tune the font used in the project, and identify macros
+19. [Modify color], randomly shift the color of UI controls in the project
+20. [UI layout offset], support Frame, SnapKit, common layout fine-tuning
+21. [Insert local variable], split single-line compound calls, change the execution order
+22. [Modify local variable], simulate manual encapsulation call, variable name association type (support nesting), advantages:
     1. The value of the local variable remains unchanged during operation. For details, see the summary table of supported types.
     2. Can be executed multiple times, the index x2 increases
-22. [Rename multi-language], support custom method multi-language processing
-23. [Modify string], recognize single-line, multi-line, string interpolation, and extended string. After the modification, it can be freely combined by a variety of methods such as encryption and split character groups, and the comments of the original characters are reserved for easy inspection
+23. [Rename multi-language], support custom method multi-language processing
+24. [Modify string], recognize single-line, multi-line, string interpolation, and extended string. After the modification, it can be freely combined by a variety of methods such as encryption and split character groups, and the comments of the original characters are reserved for easy inspection
     1. Set the'minimum length' filter
     2. You can also set the "effective number" to use together
-24. [Modify xib, storyboard], automatically insert the view, and modify the internal structure properties
-25. [Insert file], close to actual development (combined with network, storage, MVC, xib, etc., to ensure that the code has high relevance and practical significance), and strengthen contextual relevance. Can set 'file name prefix', set 'Target import' in the same way as OC
-26. [Insert text], generate common text files such as json, txt, plist, etc., and automatically high-related calls in the project (introduction of attributes, initialization, automatic destruction, etc.). Note: (under the project root path, the folder "other_xxx_text" will be generated, and the generated files will be automatically imported)
-27. [Rename class], the class name is not limited (for example: my, My), identify nested types and typealias, support class|struct|enum|protocol
+25. [Modify xib, storyboard], automatically insert the view, and modify the internal structure property
+26. [Insert file], close to actual development (combined with network, storage, MVC, xib, etc., to ensure that the code has high relevance and practical significance), and strengthen contextual relevance. Can set 'file name prefix', set 'Target import' in the same way as OC
+27. [Insert text], generate common text files such as json, txt, plist, etc., and automatically high-related calls in the project (introduction of property, initialization, automatic destruction, etc.). Note: (under the project root path, the folder "other_xxx_text" will be generated, and the generated files will be automatically imported)
+28. [Rename class], the class name is not limited (for example: my, My), identify nested types and typealias, support class|struct|enum|protocol
     1. Can be set to'rename files with the same name'
     2. 'Prefix' can be set
 > Note: At present, the Swift and OC mixed project, the OC calling Swift part will not be processed for the time being, and will be optimized in the future.
@@ -247,7 +248,7 @@ Update iterations will be carried out in the following order
    2. Property: modify
    3. Global variables: modify
 4. Lua (0%) is too specific, and it is temporarily closed. If users have this demand, we will refactor this part
-5. C# (0%), I don’t use much in actual projects, so I ranked last, depending on user needs before deciding
+5. C# (0%), I don't use much in actual projects, so I ranked last, depending on user needs before deciding
 6. Other functions:
    1. Fast obfuscation mode
 <a name="af444a353c9380bc9aa8aec067937316"></a>
@@ -255,15 +256,12 @@ Update iterations will be carried out in the following order
 Run the APP rendering, please read the [tool usage tutorial](https://www.yuque.com/docs/share/cd0968ac-9c7e-415f-9e7c-1460b85e80e8) in detail before use<br />![image.png](https://cdn.nlark.com/yuque/0/2021/png/213807/1623167266244-4978d5ed-0b2c-42b5-80c4-1b44e4ff7f96.png#averageHue=%233a9b1d&clientId=u4ef53c93-4376-4&errorMessage=unknown%20error&from=paste&height=877&id=ufbdd65fd&originHeight=1754&originWidth=2532&originalType=binary&ratio=2&rotation=0&showTitle=false&size=443560&status=error&style=none&taskId=ue83d9a90-392f-4558-9b46-f06320d2c45&title=&width=1266)
 <a name="c318fa67bf88d5d842cee03115743b4b"></a>
 # Update log
-<h3 id="L8Epu">v8.3.8 (July 26, 2026) Hot Update</h3>
+<h3 id="L8Epu">v8.3.9 (2026.08.05) Hot Update</h3>
 
-1. Fixed Swift [Rename Method] errors related to trailing closures, Objective-C without bridges, and protocol selectors.
-2. Fixed Swift [Rename Property] errors related to @objc property blacklists, and improved read-only computed property detection for manually written CodingKeys and SmartCodable.
-3. Fixed Objective-C [Rename Method] errors, adding support for nullability, typedef, and (^name) for block parameter completion, and preventing nested hijacking.
-4. Fixed Swift [Modify Property] errors, preserving the original access level when extracting methods, and explicitly displaying WARNINGs for iboutlet remnants.
-5. Fixed issues with disabling printing, quote awareness, and multi-line continuation, preventing comment chaining and block comment deadlocks.
-6. Fixed project scanning/Xcode issues, including skipping binary Pods and soft links.
-7. Optimized smart naming, improved caching speed, and significantly accelerated repeated runs.
+1. Fixed Swift [Insert Methods], issues with implicit return, nested types, method body sticking, and read-only methods 
+2. Added Swift [Modify Enum], supporting modification of enum values
+3. Optimized comment scanning processing for improved performance
+4. Optimized compilation, with automatic fallback for three destination settings
 
 [View more historical update records](https://www.yuque.com/docs/share/39f2f60e-b6a8-443b-b005-b9364fb79b95?translate=en)
 <a name="41b9f638a3e62c9449ec872644258c8d"></a>
