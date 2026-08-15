@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>confuse</title>
+  <g transform="translate(256 256) scale(1.45) translate(-256 -205)">
+    <path d="M256 68 L364 110 V214 Q364 292 256 342 Q148 292 148 214 V110 Z" fill="#C4261D" stroke="#C4261D" stroke-width="21" stroke-linejoin="round"/>
+    <g fill="none" stroke="#FFFFFF" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M216 148 C200 148 200 158 200 172 L200 188 C200 198 194 204 185 204 C194 204 200 210 200 220 L200 236 C200 250 200 260 216 260"/>
+      <path d="M296 148 C312 148 312 158 312 172 L312 188 C312 198 318 204 327 204 C318 204 312 210 312 220 L312 236 C312 250 312 260 296 260"/>
+    </g>
+    <rect x="223" y="194" width="38" height="20" rx="10" fill="#FFFFFF"/>
+    <rect x="269" y="194" width="20" height="20" rx="10" fill="#E7A8A5"/>
+  </g>
+</svg>

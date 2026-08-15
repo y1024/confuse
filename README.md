@@ -1,7 +1,17 @@
 <a name="tMJSz"></a>
-# ![china-2.png](https://cdn.nlark.com/yuque/0/2023/png/213807/1682377811568-62430f6e-2085-4044-b2c0-f372851ef03c.png#averageHue=%23eac4c2&clientId=u7a05b3c8-bd4d-4&from=paste&height=50&id=u3b8a15b3&originHeight=100&originWidth=100&originalType=binary&ratio=2&rotation=0&showTitle=false&size=10497&status=done&style=none&taskId=u04a94635-1d8b-40b7-98eb-efe61c6e631&title=&width=50)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/logo-dark.svg">
+  <img src="docs/images/logo.svg" alt="confuse" width="128" height="128">
+</picture>
+
 <a name="beqYw"></a>
 ### English | [中文](/README_ZH.md)
+<a name="download-en"></a>
+### Download
+
+- [Apple Silicon (confuse_silicon.dmg)](https://github.com/520coding/confuse/releases/latest)
+- [Intel (confuse_intel.dmg)](https://github.com/520coding/confuse/releases/latest)
+
 <a name="wNymF"></a>
 # Preface
 By chance, I ran into the iOS [vest bag business](https://www.yuque.com/docs/share/7e70244c-5dea-4035-b634-65cc082097da?translate=en) . I also used other tools on the market in the early stage, but the actual effect was not ideal. After a lot of practice, a full-featured [obfuscation tool has been developed](https://github.com/520coding/confuse) . The tool have been packaged into a Mac application which support multiple programming languages, such as OC, C++, Swift. More functions are still being packaged, so stay tuned.
@@ -253,15 +263,20 @@ Update iterations will be carried out in the following order
    1. Fast obfuscation mode
 <a name="af444a353c9380bc9aa8aec067937316"></a>
 # Graphic introduction
-Run the APP rendering, please read the [tool usage tutorial](https://www.yuque.com/docs/share/cd0968ac-9c7e-415f-9e7c-1460b85e80e8) in detail before use<br />![image.png](https://cdn.nlark.com/yuque/0/2021/png/213807/1623167266244-4978d5ed-0b2c-42b5-80c4-1b44e4ff7f96.png#averageHue=%233a9b1d&clientId=u4ef53c93-4376-4&errorMessage=unknown%20error&from=paste&height=877&id=ufbdd65fd&originHeight=1754&originWidth=2532&originalType=binary&ratio=2&rotation=0&showTitle=false&size=443560&status=error&style=none&taskId=ue83d9a90-392f-4558-9b46-f06320d2c45&title=&width=1266)
+Run the APP rendering, please read the [tool usage tutorial](https://www.yuque.com/docs/share/cd0968ac-9c7e-415f-9e7c-1460b85e80e8) in detail before use<br />![screenshot](docs/images/screenshot-en.png)
 <a name="c318fa67bf88d5d842cee03115743b4b"></a>
 # Update log
-<h3 id="L8Epu">v8.3.9 (2026.08.05) Hot Update</h3>
+<h3 id="L8Epu">v8.4.0 (2026.08.14)</h3>
 
-1. Fixed Swift [Insert Methods], issues with implicit return, nested types, method body sticking, and read-only methods 
-2. Added Swift [Modify Enum], supporting modification of enum values
-3. Optimized comment scanning processing for improved performance
-4. Optimized compilation, with automatic fallback for three destination settings
+1. Enhanced OC [Modify Control Flow], making conditional rewriting closer to manual refactoring style
+2. Enhanced OC [Modify Method], supporting structs for injected parameter types
+3. Optimized Swift [Extract Method] to improve versatility
+4. Fixed an issue where assignment, judgment and read errors of struct properties might occur in inserted code
+5. Output explicit permission prompts before interruption for directories without read‑access permission; fixed interruption caused by missing .git temporary files during search
+6. Optimized compilation: mark unsupported Swift architecture as retry‑able and fall back to real devices
+7. Adapted system libraries for iOS26; optimized template code for read‑only properties; drill‑down reference type judgment based on class/struct, greatly reducing false positive fatal judgments
+8. Optimized file renaming to shorten execution time
+9. Optimized tool logs with color‑coding support
 
 [View more historical update records](https://www.yuque.com/docs/share/39f2f60e-b6a8-443b-b005-b9364fb79b95?translate=en)
 <a name="41b9f638a3e62c9449ec872644258c8d"></a>

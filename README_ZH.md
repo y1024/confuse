@@ -1,7 +1,17 @@
 <a name="54fa66eaba498942a1604ffa591838ac"></a>
-# ![1593768128247-016fe60b-8853-48fb-8b76-f9f702b83db5.png](https://cdn.nlark.com/yuque/0/2020/png/213807/1606304234500-46a10b02-f83d-4996-99fc-ce092241ea7c.png#averageHue=%23e9c2bf&height=100&id=SslN0&originHeight=200&originWidth=200&originalType=binary&ratio=1&rotation=0&showTitle=false&size=28522&status=done&style=shadow&title=&width=100)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/logo-dark.svg">
+  <img src="docs/images/logo.svg" alt="confuse" width="128" height="128">
+</picture>
+
 <a name="HGXXr"></a>
 ### 中文 | [English](/README.md)
+<a name="download-zh"></a>
+### 下载
+
+- [Apple Silicon（confuse_silicon.dmg）](https://github.com/520coding/confuse/releases/latest)
+- [Intel（confuse_intel.dmg）](https://github.com/520coding/confuse/releases/latest)
+
 <a name="174be9787bb85687706b11dfa538cd99"></a>
 # 前言
 机缘巧合偶遇iOS[马甲包业务](https://www.yuque.com/docs/share/7e70244c-5dea-4035-b634-65cc082097da?#《马甲包简介》)，前期也使用过目前市面上其他得工具，实际效果不太理想。经过大量实践，开发出一款功能齐全的[混淆工具](https://github.com/520coding/confuse)。工具的主要功能OC、C++、Swift已封装成Mac应用，其他功能还在封装中，敬请期待。
@@ -252,15 +262,20 @@ confuse是一款[混淆工具](https://github.com/520coding/confuse)，尽可能
    1. 快速混淆模式
 <a name="af444a353c9380bc9aa8aec067937316"></a>
 # 图文介绍
-运行APP效果图，使用前请详细阅读[工具使用教程](https://www.yuque.com/docs/share/edd2603f-d09d-4795-ae71-b42419b99446?#《confuse使用说明》)<br />![image.png](https://cdn.nlark.com/yuque/0/2020/png/213807/1607931800015-f60e682f-6ef3-4c5a-bfc5-4c88222bb1a7.png#averageHue=%239a6a2a&height=540&id=Ai791&originHeight=1080&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=489209&status=done&style=none&title=&width=960)
+运行APP效果图，使用前请详细阅读[工具使用教程](https://www.yuque.com/docs/share/edd2603f-d09d-4795-ae71-b42419b99446?#《confuse使用说明》)<br />![screenshot](docs/images/screenshot-zh.png)
 <a name="c318fa67bf88d5d842cee03115743b4b"></a>
 # 更新日志
-<h3 id="INHAC">v8.3.9（2026.08.05）热更新</h3>
+<h3 id="INHAC">v8.4.0（2026.08.14）</h3>
 
-1. 修复Swift[插入方法]：隐式 return、嵌套类型、法体粘连与只读等问题
-2. 新增Swift[修改枚举]，支持修改枚举值
-3. 优化注释扫描处理，提升性能
-4. 优化编译，destination 三档自动兜底
+1. 强化OC[修改控制流]，条件改写更接近人工重构风格
+2. 强化OC[修改方法]，注入形参类型支持结构体
+3. 优化Swift[提取方法]，提高通用性
+4. 修复插入的代码，可能出现结构体属性的赋值、判断、读取错误的问题
+5. 无读取权限目录中断前先落明确权限提示，search是出现.git临时文件不存在中断问题
+6. 优化编译，unsupported Swift architecture 判为可重试，兜底落真机
+7. 系统库适配iOS26，模板代码优化，只读属性，按 class/struct 判引用类型下钻，判死误杀大幅下降
+8. 优化文件改名，缩短执行时间
+9. 优化工具日志，支持颜色区分
 
 [查看更多历史更新记录](https://www.yuque.com/docs/share/39f2f60e-b6a8-443b-b005-b9364fb79b95?#《confuse更新说明》)
 <a name="41b9f638a3e62c9449ec872644258c8d"></a>
