@@ -265,17 +265,14 @@ confuse是一款[混淆工具](https://github.com/520coding/confuse)，尽可能
 运行APP效果图，使用前请详细阅读[工具使用教程](https://www.yuque.com/docs/share/edd2603f-d09d-4795-ae71-b42419b99446?#《confuse使用说明》)<br />![screenshot](docs/images/screenshot-zh.png)
 <a name="c318fa67bf88d5d842cee03115743b4b"></a>
 # 更新日志
-<h3 id="INHAC">v8.4.0（2026.08.14）</h3>
+<h3 id="INHAC">v8.4.1（2026.08.22）热更新</h3>
 
-1. 强化OC[修改控制流]，条件改写更接近人工重构风格
-2. 强化OC[修改方法]，注入形参类型支持结构体
-3. 优化Swift[提取方法]，提高通用性
-4. 修复插入的代码，可能出现结构体属性的赋值、判断、读取错误的问题
-5. 无读取权限目录中断前先落明确权限提示，search是出现.git临时文件不存在中断问题
-6. 优化编译，unsupported Swift architecture 判为可重试，兜底落真机
-7. 系统库适配iOS26，模板代码优化，只读属性，按 class/struct 判引用类型下钻，判死误杀大幅下降
-8. 优化文件改名，缩短执行时间
-9. 优化工具日志，支持颜色区分
+1. 强化[修改控制流]，扩充变化样式，history 复用按原文 + 序号，多行 if/guard 条件压平解锁续行
+2. 优化[插入方法]，旁路变稀、成簇采样，简化通用模版
+3. 优化Swift[插入方法]，enum RawValue 非数字子类不套数字体、qualify 宿主作用域判据
+4. Swift的扫描阶段支持并行，缩短混淆时间
+5. 支持SPM依赖扫描
+6. 修复local pod误入黑名单，false 恒假外壳去单一化
 
 [查看更多历史更新记录](https://www.yuque.com/docs/share/39f2f60e-b6a8-443b-b005-b9364fb79b95?#《confuse更新说明》)
 <a name="41b9f638a3e62c9449ec872644258c8d"></a>

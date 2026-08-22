@@ -266,17 +266,14 @@ Update iterations will be carried out in the following order
 Run the APP rendering, please read the [tool usage tutorial](https://www.yuque.com/docs/share/cd0968ac-9c7e-415f-9e7c-1460b85e80e8) in detail before use<br />![screenshot](docs/images/screenshot-en.png)
 <a name="c318fa67bf88d5d842cee03115743b4b"></a>
 # Update log
-<h3 id="L8Epu">v8.4.0 (2026.08.14)</h3>
+<h3 id="L8Epu">v8.4.1 (2026.08.22) Hot Update</h3>
 
-1. Enhanced OC [Modify Control Flow], making conditional rewriting closer to manual refactoring style
-2. Enhanced OC [Modify Method], supporting structs for injected parameter types
-3. Optimized Swift [Extract Method] to improve versatility
-4. Fixed an issue where assignment, judgment and read errors of struct properties might occur in inserted code
-5. Output explicit permission prompts before interruption for directories without read‑access permission; fixed interruption caused by missing .git temporary files during search
-6. Optimized compilation: mark unsupported Swift architecture as retry‑able and fall back to real devices
-7. Adapted system libraries for iOS26; optimized template code for read‑only properties; drill‑down reference type judgment based on class/struct, greatly reducing false positive fatal judgments
-8. Optimized file renaming to shorten execution time
-9. Optimized tool logs with color‑coding support
+1. Enhanced [Control Flow Modification], expanded variation styles, history reuse based on original text + sequence number, multi-line if/guard conditions flattened to unlock continuation
+2. Optimized [Insert Method], bypass thinning, cluster sampling, simplified general templates
+3. Optimized Swift [Insert Method], enum RawValue non-numeric subclasses not wrapped with numeric bodies, qualify host scope criterion
+4. Swift scan phase supports parallelism, shortening obfuscation time
+5. Supports SPM dependency scanning
+6. Fixed local pods mistakenly entering the blacklist, false constant shell descaling
 
 [View more historical update records](https://www.yuque.com/docs/share/39f2f60e-b6a8-443b-b005-b9364fb79b95?translate=en)
 <a name="41b9f638a3e62c9449ec872644258c8d"></a>
